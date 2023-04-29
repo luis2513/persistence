@@ -76,6 +76,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Asus Global\Downloads\JPA-con-hibernate-Alura--stage-final\JPA-con-hibernate-Alura--stage-final\tienda\target\classes\com\latam\alura\tienda\dao\CategoriaDao.class"/>
 			<item value="C:\Users\Asus Global\Downloads\1846-Java-y-JDBC-Trabajando-con-una-Base-de-Datos-aula-2-views"/>
 			<item value="C:\Users\Asus Global\eclipse-workspace\control-de-stock"/>
 		</list>

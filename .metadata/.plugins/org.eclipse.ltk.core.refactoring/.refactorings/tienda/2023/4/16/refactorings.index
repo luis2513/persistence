@@ -1,1 +1,11 @@
 1681617435416	Extract method 'registrarProducto'
+1681786628812	Copy compilation unit
+1681786854483	Copy compilation unit
+1681794014676	Copy compilation unit
+1681796029863	Delete element
+1681871185307	Copy compilation unit
+1681881350372	Copy compilation unit
+1681881423632	Rename local variable 'producto'
+1681882465776	Copy compilation unit
+1681882638063	Rename local variable 'pedido'
+1682048096458	Encapsulate field 'fechaDeRegistro'

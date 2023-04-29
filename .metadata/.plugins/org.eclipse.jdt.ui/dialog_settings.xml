@@ -8,6 +8,7 @@
 	<item key="CallHierarchyViewPart.ratio3" value="500"/>
 	<item key="CallHierarchyViewPart.orientation" value="3"/>
 	<item key="CallHierarchyViewPart.ratio1" value="500"/>
+	<item key="delegateUpdating" value="false"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>
@@ -45,8 +46,8 @@
 		<item key="renameSubpackages" value="false"/>
 	</section>
 	<section name="RefactoringWizard.preview">
-		<item key="width" value="900"/>
-		<item key="height" value="625"/>
+		<item key="width" value="890"/>
+		<item key="height" value="615"/>
 	</section>
 	<section name="ExtractMethodWizard">
 		<item key="ThrowRuntimeExceptions" value="false"/>
@@ -66,6 +67,15 @@
 		<item key="FinalModifier" value="false"/>
 		<item key="SynchronizedModifier" value="false"/>
 		<item key="Comments" value="false"/>
+		<item key="LimitElements" value="false"/>
+		<item key="IgnoreDefault" value="true"/>
+		<item key="StringStyle" value="0"/>
+		<item key="LimitValue" value="10"/>
+		<item key="SkipNull" value="false"/>
+		<item key="ToStringTemplateSelected" value="0"/>
+		<item key="InstanceOf" value="false"/>
+		<item key="Blocks" value="false"/>
+		<item key="Objects.equals &amp; Objects.hash" value="false"/>
 	</section>
 	<section name="AddGetterSetterDialog">
 		<item key="SortOrdering" value="false"/>
@@ -93,5 +103,27 @@
 		<item key="DIALOG_WIDTH" value="846"/>
 		<item key="DIALOG_HEIGHT" value="1067"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="OccurrencesSearchResultPage">
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item key="GenerateJavadoc" value="false"/>
+	</section>
+	<section name="DialogBounds_GenerateToStringDialog">
+		<item key="DIALOG_X_ORIGIN" value="548"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
+		<item key="DIALOG_WIDTH" value="846"/>
+		<item key="DIALOG_HEIGHT" value="1069"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
+		<item key="DIALOG_X_ORIGIN" value="548"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
+		<item key="DIALOG_WIDTH" value="846"/>
+		<item key="DIALOG_HEIGHT" value="937"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item key="index" value="3"/>
 	</section>
 </section>
