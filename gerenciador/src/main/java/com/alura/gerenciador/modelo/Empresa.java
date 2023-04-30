@@ -1,4 +1,4 @@
-package com.alura.gerenciador.servlet;
+package com.alura.gerenciador.modelo;
 
 import java.util.Date;
 
@@ -29,5 +29,5 @@ public class Empresa {
 	}
 	
 	
-
+	
 }

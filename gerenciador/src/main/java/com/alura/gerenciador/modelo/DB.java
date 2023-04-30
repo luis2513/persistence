@@ -1,4 +1,4 @@
-package com.alura.gerenciador.servlet;
+package com.alura.gerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,7 +20,6 @@ public class DB {
 		listaEmpresas.add(empresa);
 		listaEmpresas.add(empresa2);
 		
-		
 	}
 
 	public void agregarEmpresa(Empresa empresa) {
@@ -33,12 +32,23 @@ public class DB {
 	}
 
 	public void eliminarEmpresa(Integer id) {
-		 for (Empresa empresa: listaEmpresas) {
-			 if(empresa.getId()== id) {
-				 listaEmpresas.remove(empresa);
-			 }
-		 }
 		
+		Iterator<Empresa> it =listaEmpresas.iterator();
+		while(it.hasNext()) {
+			Empresa emp = it.next();
+			if(emp.getId() == id) {
+				it.remove();
+			}
+		}
+	}
+
+	public Empresa buscarEmpresaPorId(Integer id) {
+		for (Empresa empresa : listaEmpresas) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}
+		}
+		return null;
 	}
 
 }
