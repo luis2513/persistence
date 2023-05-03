@@ -2,12 +2,9 @@ package com.alura.gerenciador.servlet;
 
 import java.io.IOException;
 
-import com.alura.gerenciador.accion.EliminarEmpresa;
-import com.alura.gerenciador.accion.ListaEmpresas;
-import com.alura.gerenciador.accion.ModificarEmpresa;
-import com.alura.gerenciador.accion.MostrarEmpresa;
-import com.alura.gerenciador.accion.NuevaEmpresa;
+import com.alura.gerenciador.accion.Accion;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,21 +20,49 @@ public class UnicaEntradaSelvlet extends HttpServlet {
 		
 		String paramAccion = request.getParameter("accion");
 		
-		if (paramAccion.equals("ListaEmpresas")) {
+		String nombreDeClase = "com.alura.gerenciador.accion."+paramAccion;
+		String nombre;
+		
+		try {
+			Class clase = Class.forName(nombreDeClase);
+			Accion accion = (Accion)clase.newInstance();
+		    nombre = accion.ejecutar(request, response);
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException
+				| IOException e) {
+			throw new ServletException(e);
+		}
+		
+        String[] tipoYDireccion = nombre.split(":");
+		
+        if(	tipoYDireccion[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/"+ tipoYDireccion[1]);
+			rd.forward(request, response);
+        }else{
+		    response.sendRedirect(tipoYDireccion[1]);
+        }
+		
+		
+		
+/*		if (paramAccion.equals("ListaEmpresas")) {
 			ListaEmpresas accion = new ListaEmpresas();
-			accion.ejecutar(request, response);
+		    nombre = accion.ejecutar(request, response);
 		}else if (paramAccion.equals("MostrarEmpresa")) { 
 			MostrarEmpresa accion = new MostrarEmpresa();
-			accion.ejecutar(request, response);
+			nombre = accion.ejecutar(request, response);
 		}else if (paramAccion.equals("EliminarEmpresa")) {  
 			EliminarEmpresa accion = new EliminarEmpresa();
-			accion.ejecutar(request, response);
+			nombre = accion.ejecutar(request, response);
 		}else if (paramAccion.equals("ModificarEmpresa")) {  
 			ModificarEmpresa accion = new ModificarEmpresa();
-		    accion.ejecutar(request, response);
+		    nombre = accion.ejecutar(request, response);
 	    }else if (paramAccion.equals("NuevaEmpresa")) {  
 			NuevaEmpresa accion = new NuevaEmpresa();
-		    accion.ejecutar(request, response);
-	    }
+		    nombre = accion.ejecutar(request, response);
+	    }else if (paramAccion.equals("NuevaEmpresaForm")) {  
+			NuevaEmpresaForm accion = new NuevaEmpresaForm();
+		    nombre = accion.ejecutar(request, response);
+	    }*/
+		
+		
 	}
 }

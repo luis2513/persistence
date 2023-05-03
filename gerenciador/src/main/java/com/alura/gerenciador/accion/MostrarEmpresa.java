@@ -4,15 +4,13 @@ import java.io.IOException;
 
 import com.alura.gerenciador.modelo.DB;
 import com.alura.gerenciador.modelo.Empresa;
-
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class MostrarEmpresa {
+public class MostrarEmpresa implements Accion {
 	
-	public void ejecutar(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+	public String ejecutar(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
@@ -25,8 +23,7 @@ public class MostrarEmpresa {
 		
 		request.setAttribute("empresa", emp);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/formModificarEmpresa.jsp");
-		rd.forward(request, response);
+		return "forward:formModificarEmpresa.jsp";
 		
 		
 	
