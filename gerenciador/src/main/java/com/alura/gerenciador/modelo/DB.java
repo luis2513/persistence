@@ -7,6 +7,7 @@ import java.util.List;
 public class DB {
 	
 	private static List<Empresa> listaEmpresas = new ArrayList<>();
+	private static List<Usuario> listaUsuarios = new ArrayList<>();
 	private static Integer llaveSecuencial = 1;
 	
 	static {
@@ -19,6 +20,17 @@ public class DB {
 		
 		listaEmpresas.add(empresa);
 		listaEmpresas.add(empresa2);
+		
+		Usuario u1 = new Usuario();
+		u1.setLoging("bruno");
+		u1.setContrasena("12345");
+		Usuario u2 = new Usuario();
+		u2.setLoging("eduardo");
+		u2.setContrasena("123");
+		
+		listaUsuarios.add(u1);
+		listaUsuarios.add(u2);
+		
 		
 	}
 
@@ -46,6 +58,15 @@ public class DB {
 		for (Empresa empresa : listaEmpresas) {
 			if(empresa.getId() == id) {
 				return empresa;
+			}
+		}
+		return null;
+	}
+
+	public Usuario existeUsuario(String paramLogin, String paramContrasena) {
+		for (Usuario usuario : listaUsuarios) {
+			if(usuario.esIgual(paramLogin, paramContrasena)) {
+				return usuario;
 			}
 		}
 		return null;
